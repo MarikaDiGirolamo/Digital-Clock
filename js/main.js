@@ -13,7 +13,7 @@ function displayTime() {
         month: "long"
     });
     let yy = date.getFullYear();
-    let period = "AM";
+    let period = "PM";
 
     if (h > 12) {
         h-= 12;
