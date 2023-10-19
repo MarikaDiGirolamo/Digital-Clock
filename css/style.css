@@ -16,6 +16,10 @@ body {
   font-family: "Space Grotesk", sans-serif;
 }
 .glow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font-size: 60px;
   color: #fff;
   font-weight: bold;
