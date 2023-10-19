@@ -64,7 +64,7 @@ function getMonthName(date) {
 
 // Questa funzione restituisce il periodo (AM o PM) in base all'ora corrente.
 function getPeriod(date) {
-    return date.getHours() //>= 12 ? "PM" : "AM";
+    return date.getHours() >= 12 ? "PM" : "AM";
 }
 
 // Chiamiamo la funzione displayTime all'avvio per mostrare l'orario corrente.
