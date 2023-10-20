@@ -1,4 +1,4 @@
-// Imposta un intervallo per chiamare la funzione displayTime ogni secondo (1000 millisecondi).
+// Imposta un intervallo per chiamare la funzione displayTime ogni secondo.
 setInterval(displayTime, 1000);
 
 // La funzione displayTime viene chiamata all'inizio e poi a intervalli regolari.
@@ -13,21 +13,20 @@ function displayTime() {
     const m = formatTimeUnit(date.getMinutes());
     const s = formatTimeUnit(date.getSeconds());
 
-    // Ottieni il giorno della settimana, il nome del mese e l'anno corrente.
+    
     const today = getDayOfWeek(date);
     const mm = getMonthName(date);
     const yy = date.getFullYear();
 
-    // Ottieni il periodo (AM o PM).
+
     const period = getPeriod(date);
 
-    // Componi l'orario completo in un'unica stringa.
     const time = `${h}:${m}:${s}`;
 
-    // Ottieni il formato della data "oggi data mese anno".
+
     const formattedDate = `${date.getDate()} ${mm} ${yy}`;
 
-    // Ottieni l'elemento HTML con l'ID 'Digital_Clock' e aggiorna il suo contenuto.
+    
     const digitalClock = document.getElementById('Digital_Clock');
     digitalClock.innerHTML = `${time} ${period}`;
 
@@ -51,21 +50,21 @@ function formatTimeUnit(unit) {
     return unit < 10 ? "0" + unit : unit;
 }
 
-// Questa funzione restituisce il nome del giorno della settimana.
+
 function getDayOfWeek(date) {
     const weekDays = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
     return weekDays[date.getDay()];
 }
 
-// Questa funzione restituisce il nome del mese.
+
 function getMonthName(date) {
     return date.toLocaleString("default", { month: "long" });
 }
 
-// Questa funzione restituisce il periodo (AM o PM) in base all'ora corrente.
+
 function getPeriod(date) {
     return date.getHours() >= 12 ? "PM" : "AM";
 }
 
-// Chiamiamo la funzione displayTime all'avvio per mostrare l'orario corrente.
+
 displayTime();
